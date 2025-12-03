@@ -1,0 +1,34 @@
+{
+  "01": {
+    "0C": {
+      "name": "engine_rpm",
+      "description": "Engine RPM",
+      "unit": "rpm",
+      "formula": "((A*256)+B)/4"
+    },
+    "0D": {
+      "name": "vehicle_speed",
+      "description": "Vehicle speed",
+      "unit": "km/h",
+      "formula": "A"
+    },
+    "05": {
+      "name": "coolant_temp",
+      "description": "Engine coolant temperature",
+      "unit": "\u00b0C",
+      "formula": "A-40"
+    },
+    "0F": {
+      "name": "intake_air_temp",
+      "description": "Intake air temperature",
+      "unit": "\u00b0C",
+      "formula": "A-40"
+    },
+    "11": {
+      "name": "throttle_position",
+      "description": "Throttle position",
+      "unit": "%",
+      "formula": "100*A/255"
+    }
+  }
+}

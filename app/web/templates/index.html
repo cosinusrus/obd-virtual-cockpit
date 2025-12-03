@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>OBD Virtual Cockpit</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>OBD Virtual Cockpit</h1>
+    <section id="status">
+        <h2>Статус системы</h2>
+        <button id="refresh-status">Обновить статус</button>
+        <pre id="status-output">...</pre>
+    </section>
+
+    <section id="elm-init">
+        <h2>Инициализация ELM327</h2>
+        <button id="btn-elm-init">AT-инициализация</button>
+        <pre id="elm-log"></pre>
+    </section>
+
+    <section id="vin">
+        <h2>VIN / Профиль ТС</h2>
+        <button id="btn-read-vin">Прочитать VIN</button>
+        <pre id="vin-output"></pre>
+    </section>
+
+    <section id="polling">
+        <h2>Опрос PID</h2>
+        <label>VIN (опционально): <input id="poll-vin" type="text" placeholder="VIN или пусто"></label><br>
+        <label>Список PID (формат Mode:PID, через запятую):<br>
+            <input id="poll-pids" type="text" value="01:0C,01:0D,01:05">
+        </label><br>
+        <label>Интервал (сек): <input id="poll-interval" type="number" value="1.0" step="0.1"></label><br>
+        <button id="btn-start-poll">Старт опроса</button>
+        <button id="btn-stop-poll">Стоп опроса</button>
+        <pre id="poll-output"></pre>
+    </section>
+
+    <section id="command">
+        <h2>Сырые команды</h2>
+        <input id="cmd-input" type="text" placeholder="010C / ATZ / 0902">
+        <button id="btn-send-cmd">Отправить</button>
+        <pre id="cmd-output"></pre>
+    </section>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
