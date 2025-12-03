@@ -3,10 +3,10 @@ from typing import Dict, Optional
 
 from influxdb_client import InfluxDBClient, Point
 
-from ..config import settings
-from .elm327_client import ELM327Client
-from .models import PollingConfig
-from .utils import parse_obd_response
+from config import settings
+from obd.elm327_client import ELM327Client
+from obd.models import PollingConfig, PIDDefinition
+from utils import parse_obd_response
 
 
 class OBDPoller:

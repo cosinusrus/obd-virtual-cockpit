@@ -3,9 +3,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from .models import VehicleProfile
-from .elm327_client import ELM327Client
-from .utils import parse_obd_response
+from models import VehicleProfile
+from elm327_client import ELM327Client
+from utils import parse_obd_response
 
 
 async def read_vin(client: ELM327Client) -> Optional[str]:

@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 from typing import Dict, List
 
-from .elm327_client import ELM327Client
-from .utils import parse_obd_response
+from elm327_client import ELM327Client
+from utils import parse_obd_response
 
 
 async def scan_supported_pids_mode01(client: ELM327Client) -> Dict[str, List[str]]:

@@ -2,18 +2,17 @@ import asyncio
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi import Request
 
-from .config import settings
-from .obd.elm327_client import ELM327Client
-from .obd.models import PollingConfig, StatusResponse
-from .obd.pid_scanner import load_pid_definitions, scan_supported_pids_mode01
-from .obd.vin_profile import create_or_update_profile, read_vin
-from .obd.poller import OBDPoller
+from config import settings
+from obd.elm327_client import ELM327Client
+from obd.models import PollingConfig, StatusResponse
+from obd.pid_scanner import load_pid_definitions, scan_supported_pids_mode01
+from obd.vin_profile import create_or_update_profile, read_vin
+from obd.poller import OBDPoller
 
 from influxdb_client import InfluxDBClient
 
